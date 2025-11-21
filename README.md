@@ -59,8 +59,8 @@ Adjust the queries dictionary to match your use case:
 python
 Copy code
 queries = {
-    "Twitter": "Keyword 1 2024 OR Keyword 2 OR Keyword 3 site:twitter.com",
-    "Facebook": "Keyword 1 2024 OR Keyword 2 OR Keyword 3 site:facebook.com",
+    "Twitter": "Keyword 1 OR Keyword 2 OR Keyword 3 site:twitter.com",
+    "Facebook": "Keyword 1 OR Keyword 2 OR Keyword 3 site:facebook.com",
     ...
 }
 You can:
@@ -116,13 +116,10 @@ Rate limiting / sleep between requests
 Logging instead of plain script output
 
 Use cases
-Brand or executive exposure monitoring
-
-Basic OSINT / footprint discovery
-
-Collecting links for manual review
-
-Supporting CTI / DRPS workflows with quick social media queries
+- Brand or executive exposure monitoring
+- Basic OSINT / footprint discovery
+- Collecting links for manual review
+- Supporting CTI / DRPS workflows with quick social media queries
 
 Disclaimer
 This script is provided for educational and research purposes.

@@ -43,79 +43,73 @@ You can install `requests` with:
 
 ```bash
 pip install requests
-Configuration
-Open the script file (e.g. Social Media account searcher.py).
+```
 
-Set your SerpAPI API key in the base_params section:
-
+## Configuration
+1. Open the script file (e.g. Social Media account searcher.py).
+2. Set your SerpAPI API key in the base_params section:
+```bash
 python
-Copy code
+
 base_params = {
     "api_key": "<YOUR_SERPAPI_KEY>",
     "output": "json"
 }
+```
+
 Adjust the queries dictionary to match your use case:
 
-python
-Copy code
+```python
+
 queries = {
     "Twitter": "Keyword 1 OR Keyword 2 OR Keyword 3 site:twitter.com",
     "Facebook": "Keyword 1 OR Keyword 2 OR Keyword 3 site:facebook.com",
     ...
 }
+```
 You can:
 
 Change Keyword 1, Keyword 2, Keyword 3 to your brand, person, campaign or project names.
 
 Add or remove platforms by editing the dictionary keys and queries.
 
-Usage
+## Usage
 From the project directory, run:
 
-bash
-Copy code
+```bash
 python "Social Media account searcher.py"
+```
 After execution, you will get a file:
-
-text
-Copy code
+```
 results.csv
+```
 with columns:
-
-Platform
-
-Title
-
-Link
-
-Snippet
+-`Platform`
+-`Title`
+-`Link`
+-`Snippet`
 
 You can open it in Excel, LibreOffice, Google Sheets, or use it as input for other tooling.
 
-Customization
-Adding new platforms
-Just add a new entry in the queries dictionary:
+## Customization
+- ### Adding new platforms
+Just add a new entry in the `queries` dictionary:
 
-python
-Copy code
+```python
+
 "Reddit": "Keyword 1 2024 OR Keyword 2 OR Keyword 3 site:reddit.com",
-Changing languages or regions
+```
+- ### Changing languages or regions
 You can extend params with additional SerpAPI options such as:
-
-hl – language (e.g. "hl": "pl")
-
-gl – country (e.g. "gl": "pl")
-
-Error handling / robustness
+  - `hl` – language (e.g. `"hl": "pl"`)
+  - `gl` – country (e.g. `"gl": "pl"`)
+- ### Error handling / robustness
 For production use, you can add:
+- Try/except around the `requests.get` call
+- Rate limiting / sleep between requests
+- Logging instead of plain script output
 
-Try/except around the requests.get call
-
-Rate limiting / sleep between requests
-
-Logging instead of plain script output
-
-Use cases
+## Use cases
 - Brand or executive exposure monitoring
 - Basic OSINT / footprint discovery
 - Collecting links for manual review
